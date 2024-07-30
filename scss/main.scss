@@ -1,0 +1,264 @@
+$primario-color: #ffefe7;
+$secundario-color: #ffdac6;
+$tercer-color: #babd8d;
+$primario-texto-color: #7c6a0a;
+$font-stack: "IBM Plex Sans", sans-serif;
+// html {
+//   font-size: 62.5%;
+// }
+@mixin flexCenter($direcion, $contenido, $alineacion) {
+  display: flex;
+  flex-direction: $direcion;
+  justify-content: $contenido;
+  align-items: $alineacion;
+}
+
+@mixin botonStyle {
+  button {
+    background: none;
+    border-style: none;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: $primario-color;
+  font-family: $font-stack;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+nav {
+  width: 95%;
+  // height: auto;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  @include flexCenter(row, space-between, center);
+  padding: 1.2rem;
+  p {
+    margin: 0;
+    color: $primario-texto-color;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 1.6rem;
+  }
+  .botones {
+    // display: flex;
+    gap: 1rem;
+    @include botonStyle();
+  }
+}
+
+h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 6rem;
+  color: $primario-texto-color;
+}
+
+article {
+  width: 95%;
+  // display: flex;
+  // justify-content: space-between;
+  @include flexCenter(row, space-between, none);
+  color: $primario-texto-color;
+  padding: 1rem 2rem;
+  // background-color: rgb(252, 215, 215);
+  color: $primario-texto-color;
+  .info-iquierdo {
+    padding-right: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      height: 7.8rem;
+      font-size: 2.4rem;
+      line-height: 7.8rem;
+    }
+    p {
+      margin: 0;
+      margin-top: 12px;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6rem;
+    }
+    button {
+      width: 24vw;
+      height: 3rem;
+      border-radius: 30px;
+      border: none;
+      color: $primario-color;
+      background-color: rgba(250, 149, 0, 1);
+      font-size: 1.3rem;
+      margin: 10px 0;
+    }
+  }
+  .info-derecho {
+    img {
+      width: 40vw;
+      height: 100%;
+      // padding-left: 40px;
+      // padding-right: 24px;
+      margin-right: 1.2rem;
+      object-fit: cover;
+      border-radius: 1.9rem;
+    }
+  }
+}
+
+.cuidado-salud-producto-seccion {
+  width: 95%;
+  height: auto;
+  // background-color: #f7f1d2;
+  margin: 0 auto;
+  .cuidado-salud {
+    .card-seccion {
+      display: flex;
+      flex-wrap: wrap;
+      // justify-content: center;
+      // align-items: center;
+      gap: 1rem;
+      border-radius: 0.8rem;
+      @include flexCenter(row, center, center);
+      .producto-card {
+        width: 15rem;
+        height: 20rem;
+        height: auto;
+        padding-bottom: 1rem;
+        background-color: $secundario-color;
+        color: $primario-texto-color;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        .icono {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding-right: 0.4rem;
+          svg {
+            width: 30px;
+            height: 30px;
+            stroke: $primario-texto-color;
+            stroke-width: 2;
+          }
+        }
+        .producto-imagen {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 13rem;
+            height: 15rem;
+            object-fit: cover;
+            border-radius: 0.6rem;
+          }
+        }
+        h3 {
+          margin: 1rem 0;
+          font-weight: 600;
+          font-size: 1rem;
+          margin-bottom: 0;
+          justify-self: start;
+          padding-right: 76px;
+        }
+        p {
+          margin: 6px 0;
+          font-size: 0.7rem;
+          margin-left: 18px;
+          margin-right: 18px;
+        }
+      }
+    }
+  }
+  .decoracion-hogar {
+    @extend .cuidado-salud;
+    .card-seccion {
+      .producto-card {
+        background-color: $tercer-color;
+        color: $primario-color;
+      }
+    }
+  }
+}
+
+.informacion-empesa-seccion {
+  // background-color: #f7f1d2;
+  width: 95%;
+  margin: 0 auto;
+  img {
+    width: 8rem;
+    height: 8rem;
+  }
+  .porque-nosotros {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    p {
+      color: rgba(232, 100, 36, 1);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .izquierdo-porque-nosotros {
+      display: flex;
+      width: 40%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      gap: 0.1rem;
+    }
+    .derecho-porque-nosotros {
+      display: flex;
+      width: 40%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      gap: 0.1rem;
+    }
+  }
+  .galeria-estilos {
+    width: 100%;
+    .galeria-de-imagenes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      img {
+        width: 16rem;
+        height: 22rem;
+        object-fit: cover;
+        border-radius: 1rem;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  .encuentanos-en {
+    width: 96%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 70vh;
+    }
+  }
+}
+
+.footer {
+  $background: #fa9500;
+  background-color: $background;
+  width: 95%;
+  height: 200px;
+  margin: 0 auto;
+}
